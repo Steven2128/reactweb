@@ -6,3 +6,4 @@ export type House = {
     price: number;
     photo: string;
 };
+
