@@ -4,13 +4,19 @@ import './index.css';
 import App from './main/App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
   </React.StrictMode>
 );
 

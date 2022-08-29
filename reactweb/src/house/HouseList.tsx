@@ -1,7 +1,7 @@
 import useFetchHouses from "../hooks/HouseHooks";
 
 const List = () => {
-    const houses = useFetchHouses();
+    const { data } = useFetchHouses();
     return (
         <div>
             <div className="row mb-2">
@@ -19,7 +19,7 @@ const List = () => {
                 </thead>
                 <tbody>
                 {
-                    houses.map((h) => (
+                    data && data.map((h) => (
                         <tr key={h.id}>
                             <td>{h.address}</td>
                             <td>{h.country}</td>
